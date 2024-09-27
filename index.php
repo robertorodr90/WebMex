@@ -1,15 +1,15 @@
 <?php
 session_start();
 
-// Verificar si el usuario ya ha iniciado sesión
+// Verificar usuario
 if (isset($_SESSION['username'])) {
     header("Location: tasks.php");
     exit();
 }
 
-// Credenciales predefinidas (se pueden cambiar o usar base de datos)
+// Credenciales predefinidas
 $valid_username = "admin";
-$valid_password = "password123"; // Cambia esta contraseña
+$valid_password = "1234";
 
 // Verificar si se envió el formulario
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Verificar las credenciales
     if ($username === $valid_username && $password === $valid_password) {
-        // Iniciar sesión y redirigir a la lista de tareas
+        // Iniciar sesión y redirigir a la lista
         $_SESSION['username'] = $username;
         header("Location: tasks.php");
         exit();

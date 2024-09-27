@@ -2,18 +2,18 @@
 session_start();
 $mysqli = new mysqli('localhost', 'root', 'root', 'todolist_db');
 
-// Verificar si el usuario está autenticado
+// Verificar usuario
 if (!isset($_SESSION['username'])) {
     header("Location: index.php");
     exit();
 }
 
 // Obtener la tarea por su ID
-if (isset($_GET['id'])) {
-    $task_id = $_GET['id'];
-    $result = $mysqli->query("SELECT * FROM tasks WHERE id=$task_id");
-    $task = $result->fetch_assoc();
-}
+// if (isset($_GET['id'])) {
+//     $task_id = $_GET['id'];
+//     $result = $mysqli->query("SELECT * FROM tasks WHERE id=$task_id");
+//     $task = $result->fetch_assoc();
+// }
 
 // Editar la tarea
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
