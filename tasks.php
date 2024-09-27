@@ -75,7 +75,6 @@ if (isset($_GET['delete'])) {
     </div>
 
     <footer class="footer">
-        <p>Lista de Tareas &copy; 2024</p>
         <a href="logout.php">Cerrar Sesión</a>
     </footer>
 </body>
